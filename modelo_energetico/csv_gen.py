@@ -60,7 +60,6 @@ def reduce_columns_period_sum(dataframe, columns, period_days):
 def reduce_columns_period_avg(dataframe, columns, period_days):
     if 672 % (period_days * 24) == 0:
         divition_length = period_days * 24
-        print(divition_length)
         new_dataframe = pd.DataFrame()
 
         for column in columns:
@@ -75,3 +74,12 @@ def reduce_columns_period_avg(dataframe, columns, period_days):
 
     else:
         raise ValueError('28 días debe ser divisible por el período')
+
+def total_q_hour(dataframe):
+    new_dataframe = pd.DataFrame()
+    for i in range(672):
+        new_dataframe[f'Q_{i}'] = np.zeros(dataframe.shape[0])
+        for j in range(i, dataframe.shape[1], 672):
+            new_dataframe[f'Q_{i}'] = new_dataframe[f'Q_{i}'] + dataframe.iloc[:, j]
+
+    return new_dataframe
