@@ -2,17 +2,12 @@ from tensorflow.keras.models import Sequential
 from tensorflow.keras import layers
 
 
-def init_vanilla_nn(n_layers, n_neurons, input_dim, output_dim):
-    if n_layers - 1 == len(n_neurons):
-        model = Sequential()
-        model.add(
-            layers.Dense(n_neurons[0], activation='relu', input_dim=input_dim))
-        for i in range(1, len(n_neurons)):
-            model.add(layers.Dense(n_neurons[i], activation='relu'))
-        model.add(layers.Dense(output_dim, activation='linear'))
-        model.compile(loss='mse', optimizer='adam', metrics=['mae'])
-        return model
-    else:
-        raise ValueError(
-            f'El número de capas de entrada y ocultas ({n_layers-1}) debe coincidir con el largo de lista de número de neuronas ({len(n_neurons)})'
-        )
+def init_vanilla_nn(n_neurons, input_dim, output_dim):
+    model = Sequential()
+    model.add(
+        layers.Dense(n_neurons[0], activation='relu', input_dim=input_dim))
+    for i in range(1, len(n_neurons)):
+        model.add(layers.Dense(n_neurons[i], activation='relu'))
+    model.add(layers.Dense(output_dim, activation='linear'))
+    model.compile(loss='mse', optimizer='adam', metrics=['mae'])
+    return model
