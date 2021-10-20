@@ -18,10 +18,10 @@ model_training = st.container()
 
 
 with header:
-    st.header("Welcome to our Proyect")
-    st.markdown("<h1>Eficiencia de un Modelo energético :</h1>",unsafe_allow_html=True)
-    st.markdown("<h2>Análisis de la eficiencia energética</h2>",unsafe_allow_html=True)
-    st.subheader("Estudio de la eficiencia computacional en el desarrollo de un modelo aplicado a la medicion del consumo energético")
+    
+    st.markdown("<h1>Eficiencia de un Modelo energético:</h1>",unsafe_allow_html=True)
+    #st.markdown("<h2>Análisis de la eficiencia energética</h2>",unsafe_allow_html=True)
+    st.markdown("<h3>Estudio de la eficiencia computacional en el desarrollo de un modelo aplicado a la medicion del consumo energético </h3>", unsafe_allow_html=True)
     add_selectbox = st.sidebar.selectbox(
     "Modelos",
     ("Q/datetime", "Q as product", "Finally"))
@@ -183,32 +183,32 @@ CSS = """
 header{color: #white;
 }
 
-h1 {color: #AEE6E6;
-    font-size: 4.625rem;
-    font-family: Copperplate, Papyrus, fantasy;
-    line-height: 0.75;
+h1 {color: black;
+    font-size: 4.rem;
+    font-family: Arial, Papyrus, fantasy;
+    line-height: 1.2;
     adding-bottom: 10px;
     text-align: center;
 
 }
 
-h2 {color: white;
-    font-size: 1.625rem;
-    font-family: 'Papyrus';
-    line-height: 0.5;
+h2 {color: black;
+    font-size: 1.2rem;
+    font-family: 'Arial';
+    line-height: 0.75;
 }
 
 
 
 h3{
-font-family: Papyrus, Papyrus, fantasy;
-/font-size: 1.5rem;/
+font-family: Arial, Papyrus, fantasy;
+/font-size: 0.5rem;/
 color: #66BFBF;
 line-height: 1.5;
 }
 
 h4 {color: #32502E;
-    font-family: 'Tahoma';
+    font-family: 'Arial';
     font-size: 1.1rem;
 }
 
@@ -230,8 +230,8 @@ image{
   overflow-y: scroll;
   overflow-x: hidden!important;
   -webkit-font-smoothing: antialiased;
-   background-image: url(https://www.bbva.com/wp-content/uploads/2021/04/energia-luminosa-luminica-bbva-renovable-sostenible-e1618571292829.jpg);
-   background-repeat: no-repeat;
+  background-image: url("https://drive.google.com/drive/u/0/folders/1Uxsi68IMLsGUDWtB_EJ1CxF9SRw2HzPW");
+  background-color: cover;
 
 }
 
