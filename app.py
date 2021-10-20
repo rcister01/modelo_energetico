@@ -96,15 +96,19 @@ with model_training:
 
 
 
-
+    
             # Set data
     df = pd.DataFrame({
-    'group': ['A','B','C','D'],
-    'AC': [38, 1.5, 30, 4],
-    'Npeople': [29, 10, 9, 34],
-    'tempext': [8, 39, 23, 24],
-    'var4': [7, 31, 33, 14],
-    'var5': [28, 15, 32, 14]
+    'group': ['S1','S2',],
+    'N° Ocupantes': [5,3],
+    'Ratio Area Vidrio': [5,4],
+    'Delta Temp': [3,1],
+    'Espesor Pared': [3,5],
+    'Caudal de Aire': [2,3],
+    'Espesor Techo' :[3,5],
+    'Cantidad Dispositivos' :[2,2],
+    
+    
     })
 
     # number of variable
@@ -128,7 +132,7 @@ with model_training:
     # Draw ylabels
     ax.set_rlabel_position(0)
     plt.yticks([10,20,30], ["10","20","30"], color="grey", size=7)
-    plt.ylim(0,40)
+    plt.ylim(0,5)
 
 
     # ------- PART 2: Add plots
@@ -139,22 +143,51 @@ with model_training:
     # Ind1
     values=df.loc[0].drop('group').values.flatten().tolist()
     values += values[:1]
-    ax.plot(angles, values, linewidth=1, linestyle='solid', label="Q Calor")
+    ax.plot(angles, values, linewidth=1, linestyle='solid', label="Consumo Edificio 1")
     ax.fill(angles, values, 'b', alpha=0.1)
 
-    # Ind2
+     #Ind2
     values=df.loc[1].drop('group').values.flatten().tolist()
     values += values[:1]
-    ax.plot(angles, values, linewidth=1, linestyle='solid', label="T temperatura")
+    ax.plot(angles, values, linewidth=1, linestyle='solid', label="Consumo Edificio 2")
     ax.fill(angles, values, 'r', alpha=0.1)
+
+    # Ind3
+    
+    #values=df.loc[2].drop('group').values.flatten().tolist()
+    #values += values[:1]
+    #ax.plot(angles, values, linewidth=1, linestyle='solid', label="T temperatura")
+    #ax.fill(angles, values, 'r', alpha=0.1)
+
+
+    plt.title('Influencia del las variables más significativas en el consumo')
+
 
     # Add legend
     plt.legend(loc='upper right', bbox_to_anchor=(0.1, 0.1))
+
 
     # Show the graph
     st.pyplot()
     st.set_option('deprecation.showPyplotGlobalUse', False)
 
+
+
+
+    time_range_x = [28,14,7,4,2,1]
+    time_range_y = [0.96,0.94,0.91,0.901,0.89,0.88]
+
+
+    # Basic stacked area chart.
+    plt.plot(time_range_x, time_range_y)
+    plt.xlabel("Days range")
+    plt.ylabel("R*2")
+    
+   
+    st.pyplot()
+    st.set_option('deprecation.showPyplotGlobalUse', False)
+
+ 
 
 
 
@@ -178,12 +211,13 @@ with model_training:
 
 
 
+
 CSS = """
 
 header{color: #white;
 }
 
-h1 {color: black;
+h1 {color: #3D2C8D;
     font-size: 4.rem;
     font-family: Arial, Papyrus, fantasy;
     line-height: 1.2;
@@ -192,7 +226,7 @@ h1 {color: black;
 
 }
 
-h2 {color: black;
+h2 {color: #3D2C8D;
     font-size: 1.2rem;
     font-family: 'Arial';
     line-height: 0.75;
@@ -203,11 +237,11 @@ h2 {color: black;
 h3{
 font-family: Arial, Papyrus, fantasy;
 /font-size: 0.5rem;/
-color: #66BFBF;
+color: #3D2C8D;
 line-height: 1.5;
 }
 
-h4 {color: #32502E;
+h4 {color: #3D2C8D;
     font-family: 'Arial';
     font-size: 1.1rem;
 }
@@ -230,8 +264,8 @@ image{
   overflow-y: scroll;
   overflow-x: hidden!important;
   -webkit-font-smoothing: antialiased;
-  background-image: url("https://drive.google.com/drive/u/0/folders/1Uxsi68IMLsGUDWtB_EJ1CxF9SRw2HzPW");
-  background-color: cover;
+  background-image: url("https://raw.githubusercontent.com/rcister01/modelo_energetico/54cccf208d3d3cb4b022b0072dafbc1fe987d6f9/Dise%C3%B1o%20sin%20t%C3%ADtulo.png");
+  background-size: cover;
 
 }
 
