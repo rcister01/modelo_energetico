@@ -9,5 +9,6 @@ def init_vanilla_nn(n_neurons, input_dim, output_dim):
     for i in range(1, len(n_neurons)):
         model.add(layers.Dense(n_neurons[i], activation='relu'))
     model.add(layers.Dense(output_dim, activation='linear'))
-    model.compile(loss='mse', optimizer='adam', metrics=['mae'])
+    model.compile(loss='mse', optimizer='adam', metrics=['mae', 'mse', 'mape'])
+
     return model
