@@ -139,27 +139,29 @@ with eda:
 
     st.markdown("<h3>Matriz de Correlación de las features</h3>",
                 unsafe_allow_html=True)
-    st.image("https://github.com/rcister01/modelo_energetico/blob/master/Captura_Corr.JPG?raw=true", width=750)
+    st.image(
+        "https://github.com/rcister01/modelo_energetico/blob/master/images/Captura_Corr.JPG?raw=true",
+        width=750)
 
     st.image(
-        "https://github.com/rcister01/modelo_energetico/blob/master/Captura_Corr_Zoom.JPG?raw=true",
+        "https://github.com/rcister01/modelo_energetico/blob/master/images/Captura_Corr_Zoom.JPG?raw=true",
         width=750)
 
 with screenshots:
     st.markdown("<h2>Capturas del código</h2>", unsafe_allow_html=True)
     with st.expander("Ver loop para separar las horas en distintas filas"):
         st.image(
-            "https://github.com/rcister01/modelo_energetico/blob/master/Captura_Loop.JPG?raw=true"
+            "https://github.com/rcister01/modelo_energetico/blob/master/images/Captura_Loop.JPG?raw=true"
         )
 
     with st.expander("Ver un pipeline típico"):
         st.image(
-            "https://github.com/rcister01/modelo_energetico/blob/master/Captura_Pipeline.JPG?raw=true"
+            "https://github.com/rcister01/modelo_energetico/blob/master/images/Captura_Pipeline.JPG?raw=true"
         )
 
     with st.expander("Ver función generadora de redes neuronales"):
         st.image(
-            "https://github.com/rcister01/modelo_energetico/blob/master/Captura_Generador_RN.JPG?raw=true"
+            "https://github.com/rcister01/modelo_energetico/blob/master/images/Captura_Generador_RN.JPG?raw=true"
         )
 
 
