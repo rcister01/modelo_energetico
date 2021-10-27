@@ -1,0 +1,8 @@
+numpy
+streamlit
+pillow
+pandas
+matplotlib==3.4.3
+wordcloud
+plotly
+scipy
