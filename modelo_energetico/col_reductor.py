@@ -32,7 +32,7 @@ def reduce_columns_avg(dataframe, columns, div_factor):
                 div_start = int(i*divition_length)
                 for j in range(div_start,div_start+divition_length):
                     for k in range(j, 672, 24):
-                        new_dataframe[f'{column}_{i}'] = new_dataframe[f'{column}_{i}'] + dataframe[f'{column}_{k}']/(672/div_factor)
+                        new_dataframe[f'{column}_{i}'] = new_dataframe[f'{column}_{i}'] + dataframe[f'{column}_{k}']/divition_length
 
         return new_dataframe
 
@@ -68,7 +68,7 @@ def reduce_columns_period_avg(dataframe, columns, period_days):
                 div_start = int(i * divition_length)
                 for j in range(div_start, div_start + divition_length):
                     new_dataframe[f'{column}_{i}'] = new_dataframe[
-                        f'{column}_{i}'] + dataframe[f'{column}_{j}'] / (672 / divition_length)
+                        f'{column}_{i}'] + dataframe[f'{column}_{j}'] / divition_length
 
         return new_dataframe
 

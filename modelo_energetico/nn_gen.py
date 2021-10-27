@@ -1,7 +1,5 @@
 from tensorflow.keras.models import Sequential
 from tensorflow.keras import layers
-from tensorflow.keras import metrics
-import tensorflow_addons as tfa
 
 
 def init_vanilla_nn(n_neurons, input_dim, output_dim):
@@ -11,10 +9,6 @@ def init_vanilla_nn(n_neurons, input_dim, output_dim):
     for i in range(1, len(n_neurons)):
         model.add(layers.Dense(n_neurons[i], activation='relu'))
     model.add(layers.Dense(output_dim, activation='linear'))
-<<<<<<< HEAD
-    model.compile(loss='mse', optimizer='adam', metrics=['mae', 'mse', 'mape', tfa.metrics.R, metrics.MeanRelativeError])
-=======
-    model.compile(loss='mse', optimizer='adam', metrics=['mae', 'mse', 'mape'])
->>>>>>> b75d700f52fe4f4779a9833de23207bccb0ee267
+    model.compile(loss='mse', optimizer='adam', metrics='mae')
 
     return model
